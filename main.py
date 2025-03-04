@@ -2,7 +2,7 @@ import os
 
 # Define the paths for both directories
 indic_trans_dir = os.path.join("Indic-Trans-2-Hindi", "Indic-Trans-2-Hindi")
-llama_dir = os.path.join("indic-trans-2-llama-405-output")
+llama_dir = os.path.join("indic-trans-2-llama-405-output", "indic-trans-llama-405-output")
 
 # Retrieve all HTML files from both directories and sort them alphabetically
 indic_trans_files = sorted([f for f in os.listdir(indic_trans_dir) if f.endswith('.html')])
@@ -29,16 +29,16 @@ html_content = """<!DOCTYPE html>
 """
 
 # Section for Indic-Trans-2-Hindi files
-html_content += "  <h2>Indic-Trans-2-Hindi - Translation 1</h2>\n  <ul>\n"
+html_content += "  <h2>Indic-Trans-2-Hindi</h2>\n  <ul>\n"
 for file in indic_trans_files:
     relative_path = os.path.join("Indic-Trans-2-Hindi", "Indic-Trans-2-Hindi", file)
     html_content += f'    <li><a href="{relative_path}">{file}</a></li>\n'
 html_content += "  </ul>\n"
 
 # Section for indic-trans-2-llama-405-output files
-html_content += "  <h2>indic-trans-2-llama-405-output - Translation 2</h2>\n  <ul>\n"
+html_content += "  <h2>indic-trans-2-llama-405-output</h2>\n  <ul>\n"
 for file in llama_files:
-    relative_path = os.path.join("indic-trans-2-llama-405-output", "indic-trans-2-llama-405-output", file)
+    relative_path = os.path.join("indic-trans-2-llama-405-output", "indic-trans-llama-405-output", file)
     html_content += f'    <li><a href="{relative_path}">{file}</a></li>\n'
 html_content += "  </ul>\n"
 
